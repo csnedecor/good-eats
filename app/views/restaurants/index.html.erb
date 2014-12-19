@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Good Eats</title>
+</head>
+<body>
+<h1>Good Eats</h1>
+  <ul>
+    <li>
+      <% @restaurants.each do |restaurant| %>
+        <%= link_to("#{restaurant.name}", restaurant_path(restaurant)) %>
+      <% end %>
+    </li>
+  </ul>
+</body>
+</html>

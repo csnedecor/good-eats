@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title><%= @restaurant.name %></title>
+</head>
+<body>
+  <h1><%= @restaurant.name %></h1>
+  <p>
+    <%= @restaurant.address %>
+  </p>
+  <p>
+    <%= @restaurant.city %>
+  </p>
+  <p>
+    <%= @restaurant.state %>, <%= @restaurant.zip_code %>
+  </p></br>
+  <% if @restaurant.description %>
+    <h3>Description:</h3>
+    <p>
+      <%= @restaurant.description %>
+    </p>
+  <% end %>
+  <% if @restaurant.category %>
+    <h3>Category:</h3>
+    <p>
+      <%= @restaurant.category %>
+    </p>
+  <% end %>
+  <%= link_to "Write a review", new_restaurant_review_path(@restaurant) %>
+  <% if @reviews %>
+    <% @reviews.each do |review| %>
+      <p>Rating: <%= review.rating %> </p>
+      <p> <%= review.body %> </p>
+    <% end %>
+  <% end %>
+</body>
+</html>
